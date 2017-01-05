@@ -42,7 +42,7 @@
 
             d3.select(this)
                 .attr('x', - bbox.width / 2)
-                .attr('y', - bbox.height / 2);
+                .attr('y', bbox.height / 2);
 
             var rect = d3.select(this.parentNode).select('rect');   // 같은 노드의 rect
 
@@ -51,8 +51,15 @@
             // 라벨의 크기를 기준으로 rect의 위치, 너비, 높이를 조정
             rect
                 .attr('x', bbox.x - bbox.width / 2 - textMargin)
-                .attr('y', bbox.y - bbox.height / 2 - textMargin)
+                .attr('y', bbox.y + bbox.height / 2 - textMargin)
                 .attr('width', bbox.width + textMargin * 2)
                 .attr('height', bbox.height + textMargin * 2);
         });
+
+    // 노드가 제대로 위치하였는지 확인
+    var centerCircle = node.append('circle')
+        .attr('r', 3)
+        .attr('fill', 'red')
+        .attr('cx', 0)
+        .attr('cy', 0);
 })();

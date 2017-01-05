@@ -55,11 +55,4 @@
                 .attr('width', bbox.width + textMargin * 2)
                 .attr('height', bbox.height + textMargin * 2);
         });
-
-    // 노드가 제대로 위치하였는지 확인
-    var centerCircle = node.append('circle')
-        .attr('r', 3)
-        .attr('fill', 'red')
-        .attr('cx', 0)
-        .attr('cy', 0);
 })();

@@ -34,5 +34,25 @@
     var text = node.append('text')  // 노드에 라벨을 넣어준다.
         .text(function (d) {
             return d.name;  // 데이터 내 name property.
+        })
+        .each(function () {
+            // this 객체는 현재 자기 자신의 DOM객체 ( 여기서는 text Element )
+
+            var bbox = this.getBBox();  // get bounding box 함수, 객체의 현재 x, y, width, height값을 리턴
+
+            d3.select(this)
+                .attr('x', - bbox.width / 2)
+                .attr('y', - bbox.height / 2);
+
+            var rect = d3.select(this.parentNode).select('rect');   // 같은 노드의 rect
+
+            var textMargin = 10;
+
+            // 라벨의 크기를 기준으로 rect의 위치, 너비, 높이를 조정
+            rect
+                .attr('x', bbox.x - bbox.width / 2 - textMargin)
+                .attr('y', bbox.y - bbox.height / 2 - textMargin)
+                .attr('width', bbox.width + textMargin * 2)
+                .attr('height', bbox.height + textMargin * 2);
         });
 })();

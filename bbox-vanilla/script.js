@@ -13,12 +13,6 @@
 
     svg.appendChild(node);
 
-    // node rect
-    var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    rect.setAttribute('rx', 5);
-    rect.setAttribute('ry', 5);
-    node.appendChild(rect);
-
     // node label
     var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     text.textContent = d.name;
@@ -32,6 +26,12 @@
     // text의 x, y 좌표
     text.setAttribute('x', - bbox.width / 2);
     text.setAttribute('y', bbox.height / 2);
+
+    // node rect
+    var rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    rect.setAttribute('rx', 5);
+    rect.setAttribute('ry', 5);
+    node.insertBefore(rect, text);
 
     // rect의 x, y 좌표 및 크기 설정
     rect.setAttribute('x', bbox.x - bbox.width / 2 - textMargin);

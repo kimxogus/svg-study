@@ -40,7 +40,7 @@
 
             var bbox = this.getBBox();  // get bounding box 함수, 객체의 현재 x, y, width, height값을 리턴
 
-            d3.select(this)
+            d3.select(this)     // text 요소의 기준점을 중앙으로 위치한다.
                 .attr('x', - bbox.width / 2)
                 .attr('y', bbox.height / 2);
 

@@ -26,8 +26,6 @@
         });
 
     var rect = node.append('rect')  // 각각의 노드 안에 사각형 모양을 만들어 준다.
-        .attr('width', 100)
-        .attr('height', 50)
         .attr('rx', 5)
         .attr('ry', 5); // 사각형 모서리를 둥글게
 
@@ -44,7 +42,7 @@
                 .attr('x', - bbox.width / 2)
                 .attr('y', bbox.height / 2);
 
-            var rect = d3.select(this.parentNode).select('rect');   // 같은 노드의 rect
+            var rect = d3.select(this.parentNode).select('rect');   // 같은 노드 그룹 내의 rect
 
             var textMargin = 10;
 

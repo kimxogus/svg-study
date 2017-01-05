@@ -4,6 +4,8 @@
         <title>SVG - BBox</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://d3js.org/d3.v4.js"></script>
+        <script src="d3-zoomer.js"></script>
         <style>
             html, body {
                 margin: 0;
@@ -27,22 +29,7 @@
         </style>
     </head>
     <body>
-        <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1">
-            <g class="nodes">
-                <g class="node" transform="translate(200,300)">
-                    <rect></rect>
-                    <text class="label">NODE1</text>
-                </g>
-                <g class="node" transform="translate(200,100)">
-                    <rect></rect>
-                    <text class="label">NODE2</text>
-                </g>
-                <g class="node" transform="translate(400,200)">
-                    <rect></rect>
-                    <text class="label">NODE3</text>
-                </g>
-            </g>
-        </svg>
+        <svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
         <script src="script.js"></script>
     </body>
 </html>

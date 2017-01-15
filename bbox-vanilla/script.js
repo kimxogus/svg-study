@@ -50,7 +50,5 @@
     circle.setAttribute('cy', 0);
 
     node.appendChild(circle);
-
-    return node;
   });
 })();
